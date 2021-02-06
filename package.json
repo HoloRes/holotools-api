@@ -9,7 +9,6 @@
     "docs": "typedoc --out docs src/",
     "lint": "eslint src/",
     "lint:fix": "eslint --fix src/",
-    "publish": "npm publish --access public",
     "publish:prepare": "npm run lint:fix && npm run build && npm run docs",
     "publish:patch": "npm version patch && npm publish --access public",
     "publish:minor": "npm version minor && npm publish --access public",
