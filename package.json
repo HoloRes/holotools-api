@@ -9,10 +9,11 @@
     "docs": "typedoc --out docs src/",
     "lint": "eslint src/",
     "lint:fix": "eslint --fix src/",
-    "publish": "npm run lint:fix && npm run build && npm run docs && npm publish --access public",
-    "publish:patch": "npm run lint:fix && npm run build && npm run docs && npm version patch && npm publish --access public",
-    "publish:minor": "npm run lint:fix && npm run build && npm run docs && npm version minor && npm publish --access public",
-    "publish:major": "npm run lint:fix && npm run build && npm run docs && npm version major && npm publish --access public"
+    "publish": "npm publish --access public",
+    "publish:prepare": "npm run lint:fix && npm run build && npm run docs",
+    "publish:patch": "npm version patch && npm publish --access public",
+    "publish:minor": "npm version minor && npm publish --access public",
+    "publish:major": "npm version major && npm publish --access public"
   },
   "repository": {
     "type": "git",
