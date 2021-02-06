@@ -1,5 +1,5 @@
-const HoloapiClient = require('./src/index');
+const HoloApiClient = require('./dist/index');
 
-const client = new HoloapiClient();
+const client = new HoloApiClient();
 
 client.videos.getLive().then(console.log);

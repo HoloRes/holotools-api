@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "es6"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "extends": "@tsconfig/node14/tsconfig.json"
+}
