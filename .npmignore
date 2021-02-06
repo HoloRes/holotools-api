@@ -1,0 +1,6 @@
+docs/
+src/
+test.js
+tsconfig.json
+.eslintignore
+.eslintrc.js
