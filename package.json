@@ -1,0 +1,36 @@
+{
+  "name": "holoapi",
+  "version": "1.0.0",
+  "description": "A Javascript library for the Holotools API.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc2md src/index.js --plugin @godaddy/dmd --template README.hbs > README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoloRes/holotools-api.git"
+  },
+  "keywords": [
+    "hololive",
+    "holotools",
+    "api"
+  ],
+  "author": "Hololive Resort website team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HoloRes/holotools-api/issues"
+  },
+  "module": true,
+  "homepage": "https://github.com/HoloRes/holotools-api#readme",
+  "devDependencies": {
+    "@godaddy/dmd": "^1.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jsdoc-to-markdown": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
