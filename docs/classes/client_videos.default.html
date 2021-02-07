@@ -4,10 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>default | @holores/holoapi</title>
-	<meta name="description" content="Documentation for @holores/holoapi">
+	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -22,6 +21,8 @@
 					<ul class="results">
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
+					</ul>
+					<ul class="results-priority" style="display:none">
 					</ul>
 					<a href="../index.html" class="title">@holores/holoapi</a>
 				</div>
@@ -41,6 +42,8 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -52,22 +55,43 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules.html">@holores/holoapi</a>
-				</li>
-				<li>
 					<a href="../modules/client_videos.html">client/videos</a>
 				</li>
 				<li>
 					<a href="client_videos.default.html">default</a>
 				</li>
 			</ul>
-			<h1>Class default</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
-		<div class="col-8 col-content">
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/client_channels.html">client/channels</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/client_videos.html">client/videos</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/types.html">types</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/util.html">util</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-7 offset-3 col-content">
+			<h1>Class default</h1>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -77,73 +101,19 @@
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="client_videos.default.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="client_videos.default.html#url" class="tsd-kind-icon">url</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_videos.default.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_videos.default.html#getlive" class="tsd-kind-icon">get<wbr>Live</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_videos.default.html#getbybilibiliid" class="tsd-kind-icon">get<wbr>ByBilibili<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_videos.default.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_videos.default.html#getbyyoutubeid" class="tsd-kind-icon">get<wbr>ByYoutube<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="client_videos.default.html#getlivestreams" class="tsd-kind-icon">get<wbr>Livestreams</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span>settings<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="client_videos.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/HoloRes/holotools-api/blob/4bfa3a5/src/client/videos.ts#L5">client/videos.ts:5</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>settings: <span class="tsd-signature-symbol">{ </span>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="client_videos.default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="url" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/HoloRes/holotools-api/blob/4bfa3a5/src/client/videos.ts#L5">client/videos.ts:5</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -152,16 +122,16 @@
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, sort<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, order<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;asc&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;desc&quot;</span>, title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, startDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span>, endDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span>, status<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;new&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;live&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;upcoming&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;past&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;missing&quot;</span>, isUploaded<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, isCaptioned<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, offset<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, sort<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, order<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"asc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"desc"</span>, title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, startDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span>, endDate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span>, status<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"new"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"live"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"upcoming"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"past"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"missing"</span>, isUploaded<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, isCaptioned<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.videodata.html" class="tsd-signature-type">VideoData</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/HoloRes/holotools-api/blob/4bfa3a5/src/client/videos.ts#L56">client/videos.ts:56</a></li>
+									<li>Defined in client/videos.ts:153</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
 									<p>Returns a list of videos and streams.</p>
 								</div>
@@ -170,53 +140,161 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>limit: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 25</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The number of videos to return</p>
+									</div>
 								</li>
 								<li>
 									<h5>offset: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>The number of videos to skip.</p>
+									</div>
 								</li>
 								<li>
 									<h5>sort: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Column name to sort by.</p>
+									</div>
 								</li>
 								<li>
-									<h5>order: <span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;asc&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;desc&quot;</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<h5>order: <span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"asc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"desc"</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Sort order.</p>
+									</div>
 								</li>
 								<li>
 									<h5>title: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Video title search query.</p>
+									</div>
 								</li>
 								<li>
 									<h5>startDate: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Cut off all videos before this date</p>
+									</div>
 								</li>
 								<li>
 									<h5>endDate: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Cut off all videos after this date</p>
+									</div>
 								</li>
 								<li>
-									<h5>status: <span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;new&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;live&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;upcoming&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;past&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;missing&quot;</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<h5>status: <span class="tsd-signature-type">&quot;&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"new"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"live"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"upcoming"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"past"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"missing"</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Status of video to fetch.</p>
+									</div>
 								</li>
 								<li>
 									<h5>isUploaded: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Return only videos if true, otherwise will also return streams</p>
+									</div>
 								</li>
 								<li>
 									<h5>isCaptioned: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography tsd-comment-text">
+										<p>Set to true to only get videos with captions</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.videodata.html" class="tsd-signature-type">VideoData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getlive" class="tsd-anchor"></a>
-					<h3>get<wbr>Live</h3>
+					<a name="getbybilibiliid" class="tsd-anchor"></a>
+					<h3>get<wbr>ByBilibili<wbr>Id</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Live<span class="tsd-signature-symbol">(</span>channelID<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, maxUpcomingHours<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, lookbackHours<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, hideDescription<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ByBilibili<wbr>Id<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, withComments<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.bilibilivideo.html" class="tsd-signature-type">BilibiliVideo</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/HoloRes/holotools-api/blob/4bfa3a5/src/client/videos.ts#L21">client/videos.ts:21</a></li>
+									<li>Defined in client/videos.ts:299</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>withComments: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.bilibilivideo.html" class="tsd-signature-type">BilibiliVideo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, withComments<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.video.html" class="tsd-signature-type">Video</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in client/videos.ts:215</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>withComments: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.video.html" class="tsd-signature-type">Video</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbyyoutubeid" class="tsd-anchor"></a>
+					<h3>get<wbr>ByYoutube<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ByYoutube<wbr>Id<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, withComments<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.youtubevideo.html" class="tsd-signature-type">YoutubeVideo</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in client/videos.ts:257</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>withComments: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.youtubevideo.html" class="tsd-signature-type">YoutubeVideo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlivestreams" class="tsd-anchor"></a>
+					<h3>get<wbr>Livestreams</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Livestreams<span class="tsd-signature-symbol">(</span>channelID<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, maxUpcomingHours<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, lookbackHours<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, hideDescription<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.livestreamdata.html" class="tsd-signature-type">LivestreamData</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in client/videos.ts:50</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography tsd-comment-shorttext">
 								<div class="lead">
 									<p>Get currently live channels</p>
 								</div>
@@ -225,73 +303,64 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>channelID: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;&#x27;</span></h5>
-									<div class="tsd-comment tsd-typography">
+									<div class="tsd-comment tsd-typography tsd-comment-text">
 										<p>HoloAPI channel ID or YouTube channel ID.</p>
 									</div>
 								</li>
 								<li>
 									<h5>maxUpcomingHours: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 48</span></h5>
-									<div class="tsd-comment tsd-typography">
+									<div class="tsd-comment tsd-typography tsd-comment-text">
 										<p>Restrain how far ahead of now to return scheduled streams. Can be used to prevent getting Free Chat rooms.</p>
 									</div>
 								</li>
 								<li>
 									<h5>lookbackHours: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
-									<div class="tsd-comment tsd-typography">
+									<div class="tsd-comment tsd-typography tsd-comment-text">
 										<p>How far back to receive recently-ended streams, maximum is 12 hours.</p>
 									</div>
 								</li>
 								<li>
 									<h5>hideDescription: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
+									<div class="tsd-comment tsd-typography tsd-comment-text">
 										<p>Hide the description key in all channel objects, possible bandwidth saving measure.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.livestreamdata.html" class="tsd-signature-type">LivestreamData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
+			<!--{&quot;options&quot;:&quot;C:\\Users\\Kevin\\Documents\\Workspace\\holotools-api&quot;,&quot;tsconfig&quot;:&quot;C:\\Users\\Kevin\\Documents\\Workspace\\holotools-api&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[&quot;typedoc-neo-theme&quot;],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="../modules.html">Exports</a>
-					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/client_videos.html">client/videos</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/index.html">index</a>
-					</li>
-				</ul>
-			</nav>
+		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
+					<li class="current tsd-kind-class tsd-parent-kind-module root">
 						<a href="client_videos.default.html" class="tsd-kind-icon">default</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="client_videos.default.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="client_videos.default.html#url" class="tsd-kind-icon">url</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="client_videos.default.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="client_videos.default.html#getlive" class="tsd-kind-icon">get<wbr>Live</a>
+								<a href="client_videos.default.html#getbybilibiliid" class="tsd-kind-icon">get<wbr>ByBilibili<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="client_videos.default.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="client_videos.default.html#getbyyoutubeid" class="tsd-kind-icon">get<wbr>ByYoutube<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="client_videos.default.html#getlivestreams" class="tsd-kind-icon">get<wbr>Livestreams</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
+					<li class=" tsd-kind-class tsd-parent-kind-module root">
 						<a href="client_videos.export_.html" class="tsd-kind-icon">export&#61;</a>
 					</li>
 				</ul>
@@ -300,22 +369,9 @@
 	</div>
 </div>
 <footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-			</ul>
-		</div>
-	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

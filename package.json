@@ -4,9 +4,9 @@
   "description": "A Javascript library for the Holotools API.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "node test.js",
-    "build": "tsc",
-    "docs": "typedoc --out docs src/",
+    "build": "tsc -d",
+    "test": "npm run build && node test.js",
+    "docs": "typedoc --theme ./node_modules/typedoc-neo-theme/bin/default --plugin typedoc-neo-theme --excludeInternal --out docs src/",
     "lint": "eslint src/",
     "lint:fix": "eslint --fix src/",
     "publish:prepare": "npm run lint:fix && npm run build && npm run docs",
@@ -38,6 +38,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "typedoc": "^0.20.22",
+    "typedoc-neo-theme": "^1.1.0",
     "typescript": "^4.1.3"
   },
   "dependencies": {
