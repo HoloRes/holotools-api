@@ -32,9 +32,23 @@ declare class VideoHandler {
      * @param isCaptioned - Set to true to only get videos with captions
      */
     get(limit?: number, offset?: number, sort?: string, order?: '' | 'asc' | 'desc', title?: string, startDate?: Date | string, endDate?: Date | string, status?: '' | 'new' | 'live' | 'upcoming' | 'past' | 'missing', isUploaded?: boolean, isCaptioned?: boolean): Promise<VideoData>;
-    getById(id: string, withComments: boolean): Promise<Video>;
+    /**
+     * Get a video by its HoloAPI id
+     * @param id - HoloAPI record ID of the video.
+     * @param withComments - Set to true to include comments in the response.
+     */
+    getById(id: number, withComments: boolean): Promise<Video>;
+    /**
+     * Get a video by its YouTube id
+     * @param id - YouTube ID of the video.
+     * @param withComments - Set to true to include comments in the response.
+     */
     getByYoutubeId(id: string, withComments: boolean): Promise<YoutubeVideo>;
-    getByBilibiliId(id: string, withComments: boolean): Promise<BilibiliVideo>;
+    /**
+     * Get a video by its bilibli id
+     * @param id - bilibili ID of the video.
+     */
+    getByBilibiliId(id: string): Promise<BilibiliVideo>;
 }
 export default VideoHandler;
 export = VideoHandler;

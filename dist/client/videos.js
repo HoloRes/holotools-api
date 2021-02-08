@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 // Imports
 const axios_1 = __importDefault(require("axios"));
 const util_1 = require("../util");
-// TODO: Transform responses to more easily usable objects, better errors
 class VideoHandler {
     /**
      * @internal
@@ -99,7 +98,13 @@ class VideoHandler {
                     ended: endedVideoData,
                     cached: data.cached,
                 });
-            }).catch(reject);
+            }).catch((error) => {
+                var _a;
+                if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 400)
+                    reject(new Error(error.response.data.message));
+                else
+                    reject(error);
+            });
         });
     }
     /**
@@ -160,9 +165,20 @@ class VideoHandler {
                     total: data.total,
                     count: data.count,
                 });
-            }).catch(reject);
+            }).catch((error) => {
+                var _a;
+                if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 400)
+                    reject(new Error(error.response.data.message));
+                else
+                    reject(error);
+            });
         });
     }
+    /**
+     * Get a video by its HoloAPI id
+     * @param id - HoloAPI record ID of the video.
+     * @param withComments - Set to true to include comments in the response.
+     */
     getById(id, withComments) {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/videos/${id}`, {
@@ -199,9 +215,20 @@ class VideoHandler {
                     durationSecs: video.durationSecs,
                     comments,
                 });
-            }).catch(reject);
+            }).catch((error) => {
+                var _a, _b;
+                if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 400 || ((_b = error.response) === null || _b === void 0 ? void 0 : _b.status) === 404)
+                    reject(new Error(error.response.data.message));
+                else
+                    reject(error);
+            });
         });
     }
+    /**
+     * Get a video by its YouTube id
+     * @param id - YouTube ID of the video.
+     * @param withComments - Set to true to include comments in the response.
+     */
     getByYoutubeId(id, withComments) {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/videos/youtube/${id}`, {
@@ -238,21 +265,23 @@ class VideoHandler {
                     durationSecs: video.durationSecs,
                     comments,
                 });
-            }).catch(reject);
+            }).catch((error) => {
+                var _a, _b;
+                if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 400 || ((_b = error.response) === null || _b === void 0 ? void 0 : _b.status) === 404)
+                    reject(new Error(error.response.data.message));
+                else
+                    reject(error);
+            });
         });
     }
-    getByBilibiliId(id, withComments) {
+    /**
+     * Get a video by its bilibli id
+     * @param id - bilibili ID of the video.
+     */
+    getByBilibiliId(id) {
         return new Promise((resolve, reject) => {
-            axios_1.default.get(`${this.url}/videos/bilibili/${id}`, {
-                params: {
-                    with_comments: withComments ? 1 : 0,
-                },
-            }).then((res) => {
+            axios_1.default.get(`${this.url}/videos/bilibili/${id}`).then((res) => {
                 const video = util_1.keysToCamel(res.data);
-                const comments = withComments ? video.comments.map((comment) => ({
-                    id: comment.commentKey,
-                    message: comment.message,
-                })) : undefined;
                 resolve({
                     id: video.id,
                     youtubeId: undefined,
@@ -275,9 +304,14 @@ class VideoHandler {
                     isUploaded: video.isUploaded === 1,
                     isCaptioned: video.isCaptioned === 1,
                     durationSecs: video.durationSecs,
-                    comments,
                 });
-            }).catch(reject);
+            }).catch((error) => {
+                var _a, _b;
+                if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 400 || ((_b = error.response) === null || _b === void 0 ? void 0 : _b.status) === 404)
+                    reject(new Error(error.response.data.message));
+                else
+                    reject(error);
+            });
         });
     }
 }

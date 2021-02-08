@@ -1,6 +1,6 @@
 docs/
 src/
-test.js
+test/test.ts
 tsconfig.json
 .eslintignore
 .eslintrc.js

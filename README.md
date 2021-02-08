@@ -5,4 +5,4 @@ A client for Javascript to interact with the [HoloAPI](https://api.holotools.app
 
 Documentation can be found [here](https://holores.github.io/holotools-api/modules/index.html).
 
-This project was intended for me to learn how to work with NPM and Typescript.
+This project was intended for me to learn how to work with the NPM registry, Typescript and mocha + chai.

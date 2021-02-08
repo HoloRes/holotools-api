@@ -1,5 +1,5 @@
 // Imports
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 // Types
 import {
@@ -18,12 +18,10 @@ import {
 	ApiVideo,
 	ApiVideoWithComments,
 	Comment,
-	ApiBilibiliVideoWithComments,
+	ApiBilibiliVideo,
 	ApiYoutubeWithComments,
 } from '../types';
 import { keysToCamel } from '../util';
-
-// TODO: Transform responses to more easily usable objects, better errors
 
 class VideoHandler {
 	/**
@@ -133,7 +131,10 @@ class VideoHandler {
 					ended: endedVideoData,
 					cached: data.cached,
 				});
-			}).catch(reject);
+			}).catch((error: AxiosError) => {
+				if (error.response?.status === 400) reject(new Error(error.response.data.message));
+				else reject(error);
+			});
 		});
 	}
 
@@ -208,11 +209,19 @@ class VideoHandler {
 					total: data.total,
 					count: data.count,
 				});
-			}).catch(reject);
+			}).catch((error: AxiosError) => {
+				if (error.response?.status === 400) reject(new Error(error.response.data.message));
+				else reject(error);
+			});
 		});
 	}
 
-	getById(id: string, withComments: boolean): Promise<Video> {
+	/**
+	 * Get a video by its HoloAPI id
+	 * @param id - HoloAPI record ID of the video.
+	 * @param withComments - Set to true to include comments in the response.
+	 */
+	getById(id: number, withComments: boolean): Promise<Video> {
 		return new Promise((resolve, reject) => {
 			axios.get(`${this.url}/videos/${id}`, {
 				params: {
@@ -250,10 +259,18 @@ class VideoHandler {
 					durationSecs: video.durationSecs,
 					comments,
 				});
-			}).catch(reject);
+			}).catch((error: AxiosError) => {
+				if (error.response?.status === 400 || error.response?.status === 404) reject(new Error(error.response.data.message));
+				else reject(error);
+			});
 		});
 	}
 
+	/**
+	 * Get a video by its YouTube id
+	 * @param id - YouTube ID of the video.
+	 * @param withComments - Set to true to include comments in the response.
+	 */
 	getByYoutubeId(id: string, withComments: boolean): Promise<YoutubeVideo> {
 		return new Promise((resolve, reject) => {
 			axios.get(`${this.url}/videos/youtube/${id}`, {
@@ -292,23 +309,21 @@ class VideoHandler {
 					durationSecs: video.durationSecs,
 					comments,
 				});
-			}).catch(reject);
+			}).catch((error: AxiosError) => {
+				if (error.response?.status === 400 || error.response?.status === 404) reject(new Error(error.response.data.message));
+				else reject(error);
+			});
 		});
 	}
 
-	getByBilibiliId(id: string, withComments: boolean): Promise<BilibiliVideo> {
+	/**
+	 * Get a video by its bilibli id
+	 * @param id - bilibili ID of the video.
+	 */
+	getByBilibiliId(id: string): Promise<BilibiliVideo> {
 		return new Promise((resolve, reject) => {
-			axios.get(`${this.url}/videos/bilibili/${id}`, {
-				params: {
-					with_comments: withComments ? 1 : 0,
-				},
-			}).then((res) => {
-				const video: ApiBilibiliVideoWithComments = keysToCamel(res.data);
-
-				const comments: Array<Comment>|undefined = withComments ? video.comments.map((comment) => ({
-					id: comment.commentKey,
-					message: comment.message,
-				})) : undefined;
+			axios.get(`${this.url}/videos/bilibili/${id}`).then((res) => {
+				const video: ApiBilibiliVideo = keysToCamel(res.data);
 
 				resolve({
 					id: video.id,
@@ -332,9 +347,11 @@ class VideoHandler {
 					isUploaded: video.isUploaded === 1,
 					isCaptioned: video.isCaptioned === 1,
 					durationSecs: video.durationSecs,
-					comments,
 				});
-			}).catch(reject);
+			}).catch((error: AxiosError) => {
+				if (error.response?.status === 400 || error.response?.status === 404) reject(new Error(error.response.data.message));
+				else reject(error);
+			});
 		});
 	}
 }

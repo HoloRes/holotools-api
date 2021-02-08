@@ -1,10 +1,11 @@
 // Imports
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 // Types
-import { ChannelData, Settings } from '../types';
+import {
+	ApiChannel, Channel, ChannelData, Settings,
+} from '../types';
 import { keysToCamel } from '../util';
-// TODO: Transform responses to more easily usable objects, better errors
 
 class ChannelHandler {
 	/**
@@ -46,8 +47,115 @@ class ChannelHandler {
 				},
 			})
 				.then((res) => {
-					resolve(keysToCamel(res.data));
-				}).catch(reject);
+					const data = keysToCamel(res.data);
+
+					const channelData: Array<Channel> = data.channels.map((ch: ApiChannel) => ({
+						id: ch.id,
+						youtubeId: ch.ytChannelId,
+						bilibiliSpaceId: ch.bbSpaceId || undefined,
+						name: ch.name,
+						description: ch.description || undefined,
+						photo: ch.photo || undefined,
+						publishedAt: new Date(ch.publishedAt),
+						twitter: ch.twitterLink || undefined,
+					}));
+
+					resolve({
+						channels: channelData,
+						total: data.total,
+						count: data.count,
+					});
+				}).catch((error: AxiosError) => {
+					if (error.response?.status === 400) reject(new Error(error.response.data.message));
+					else reject(error);
+				});
+		});
+	}
+
+	/**
+	 * Get a channel by its HoloAPI id
+	 * @param id - HoloAPI id of the channel.
+	 */
+	getById(id: number): Promise<Channel> {
+		return new Promise((resolve, reject) => {
+			axios.get(`${this.url}/channels/${id}`)
+				.then((res) => {
+					const data = keysToCamel(res.data);
+
+					const channelData: Channel = {
+						id: data.id,
+						youtubeId: data.ytChannelId,
+						bilibiliSpaceId: data.bbSpaceId || undefined,
+						name: data.name,
+						description: data.description || undefined,
+						photo: data.photo || undefined,
+						publishedAt: new Date(data.publishedAt),
+						twitter: data.twitterLink || undefined,
+					};
+
+					resolve(channelData);
+				}).catch((error: AxiosError) => {
+					if (error.response?.status === 400 || error.response?.status === 404) reject(new Error(error.response.data.message));
+					else reject(error);
+				});
+		});
+	}
+
+	/**
+	 * Get a channel by its YouTube id.
+	 * @param id - YouTube id of the channel.
+	 */
+	getByYouTubeId(id: string): Promise<Channel> {
+		return new Promise((resolve, reject) => {
+			axios.get(`${this.url}/channels/youtube/${id}`)
+				.then((res) => {
+					const data = keysToCamel(res.data);
+
+					const channelData: Channel = {
+						id: data.id,
+						youtubeId: data.ytChannelId,
+						bilibiliSpaceId: data.bbSpaceId || undefined,
+						name: data.name,
+						description: data.description || undefined,
+						photo: data.photo || undefined,
+						publishedAt: new Date(data.publishedAt),
+						twitter: data.twitterLink || undefined,
+					};
+
+					resolve(channelData);
+				}).catch((error: AxiosError) => {
+					if (error.response?.status === 400 || error.response?.status === 404) reject(new Error(error.response.data.message));
+					else reject(error);
+				});
+		});
+	}
+
+	/**
+	 * Get a channel by its Bilibili id.
+	 * @param id - Bilibili id of the channel.
+	 */
+	getByBilibiliId(id: string): Promise<Channel> {
+		return new Promise((resolve, reject) => {
+			axios.get(`${this.url}/channels/bilibili/${id}`)
+				.then((res) => {
+					const data = keysToCamel(res.data);
+
+					const channelData: Channel = {
+						id: data.id,
+						youtubeId: data.ytChannelId,
+						bilibiliSpaceId: data.bbSpaceId || undefined,
+						name: data.name,
+						description: data.description || undefined,
+						photo: data.photo || undefined,
+						publishedAt: new Date(data.publishedAt),
+						twitter: data.twitterLink || undefined,
+					};
+
+					resolve(channelData);
+				}).catch((error: AxiosError) => {
+					if (error.response?.status === 400 || error.response?.status === 404) reject(new Error(error.response.data.message));
+					else reject(error);
+				});
 		});
 	}
 }

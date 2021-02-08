@@ -91,8 +91,7 @@ export interface YoutubeVideo extends Video {
 
 export interface BilibiliVideo extends Video {
 	youtubeId: undefined,
-	bilibiliId: string,
-	comments?: Array<Comment>
+	bilibiliId: string
 }
 
 export interface CommentData {
@@ -197,7 +196,7 @@ export interface ApiVideoWithComments extends ApiVideo {
 /**
  * @internal
  */
-export interface ApiBilibiliVideoWithComments extends ApiVideoWithComments {
+export interface ApiBilibiliVideo extends ApiVideo {
 	ytVideoKey: undefined,
 	bbVideoId: string
 }
