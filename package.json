@@ -5,12 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -d",
-    "test": "mocha -r ts-node/register test/*.ts",
-    "test:commonjs": "npm run build && mocha",
+    "test": "mocha -r ts-node/register test/*.ts --timeout 5000",
+    "test:commonjs": "npm run build && mocha --timeout 5000",
+    "test:full": "npm run test && npm run test:commonjs",
     "docs": "typedoc --theme ./node_modules/typedoc-neo-theme/bin/default --plugin typedoc-neo-theme --excludeInternal --out docs src/",
     "lint": "eslint src/",
     "lint:fix": "eslint --fix src/",
-    "publish:prepare": "npm run lint:fix && npm run build && npm run docs",
+    "publish:prepare": "npm run lint:fix && npm run test:full && npm run docs",
     "publish:patch": "npm version patch && npm publish --access public",
     "publish:minor": "npm version minor && npm publish --access public",
     "publish:major": "npm version major && npm publish --access public"

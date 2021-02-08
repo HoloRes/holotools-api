@@ -120,7 +120,7 @@ class VideoHandler {
      * @param isUploaded - Return only videos if true, otherwise will also return streams
      * @param isCaptioned - Set to true to only get videos with captions
      */
-    get(limit = 25, offset = 0, sort = '', order = '', title = '', startDate = '', endDate = '', status = '', isUploaded = false, isCaptioned = false) {
+    get(limit = 25, offset = 0, sort = 'published_at', order = 'desc', title = '', startDate = '', endDate = '', status = '', isUploaded = false, isCaptioned = false) {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/videos`, {
                 params: {
@@ -143,9 +143,10 @@ class VideoHandler {
                     bilibiliId: video.bbVideoId,
                     title: video.title,
                     thumbnail: video.thumbnail || undefined,
+                    publishedAt: video.publishedAt ? new Date(video.publishedAt) : undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-                    endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+                    endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
@@ -195,11 +196,12 @@ class VideoHandler {
                     id: video.id,
                     youtubeId: video.ytVideoKey || undefined,
                     bilibiliId: video.bbVideoId || undefined,
+                    status: video.status,
                     title: video.title,
                     thumbnail: video.thumbnail || undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-                    endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+                    endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
@@ -243,13 +245,14 @@ class VideoHandler {
                 })) : undefined;
                 resolve({
                     id: video.id,
+                    status: video.status,
                     youtubeId: video.ytVideoKey,
                     bilibiliId: undefined,
                     title: video.title,
                     thumbnail: video.thumbnail || undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-                    endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+                    endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
@@ -284,13 +287,14 @@ class VideoHandler {
                 const video = util_1.keysToCamel(res.data);
                 resolve({
                     id: video.id,
+                    status: video.status,
                     youtubeId: undefined,
                     bilibiliId: video.bbVideoId,
                     title: video.title,
                     thumbnail: video.thumbnail || undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-                    endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+                    endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,

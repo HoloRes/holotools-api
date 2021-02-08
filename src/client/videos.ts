@@ -154,12 +154,12 @@ class VideoHandler {
 	get(
 		limit = 25,
 		offset = 0,
-		sort = '',
-		order: '' | 'asc' | 'desc' = '',
+		sort = 'published_at',
+		order: 'asc' | 'desc' = 'desc',
 		title = '',
 		startDate: Date | string = '',
 		endDate: Date | string = '',
-		status: '' | 'new' | 'live' | 'upcoming' | 'past' | 'missing' = '',
+		status: '' | 'new' | 'live' | 'upcoming' | 'past' = '',
 		isUploaded = false,
 		isCaptioned = false,
 	): Promise<VideoData> {
@@ -186,9 +186,10 @@ class VideoHandler {
 					bilibiliId: video.bbVideoId,
 					title: video.title,
 					thumbnail: video.thumbnail || undefined,
+					publishedAt: video.publishedAt ? new Date(video.publishedAt) : undefined,
 					scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
 					startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-					endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+					endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
 					channel: {
 						id: video.channel.id,
 						youtubeId: video.channel.ytChannelId,
@@ -239,11 +240,12 @@ class VideoHandler {
 					id: video.id,
 					youtubeId: video.ytVideoKey || undefined,
 					bilibiliId: video.bbVideoId || undefined,
+					status: video.status,
 					title: video.title,
 					thumbnail: video.thumbnail || undefined,
 					scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
 					startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-					endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+					endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
 					channel: {
 						id: video.channel.id,
 						youtubeId: video.channel.ytChannelId,
@@ -287,13 +289,14 @@ class VideoHandler {
 
 				resolve({
 					id: video.id,
+					status: video.status,
 					youtubeId: video.ytVideoKey,
 					bilibiliId: undefined,
 					title: video.title,
 					thumbnail: video.thumbnail || undefined,
 					scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
 					startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-					endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+					endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
 					channel: {
 						id: video.channel.id,
 						youtubeId: video.channel.ytChannelId,
@@ -327,13 +330,14 @@ class VideoHandler {
 
 				resolve({
 					id: video.id,
+					status: video.status,
 					youtubeId: undefined,
 					bilibiliId: video.bbVideoId,
 					title: video.title,
 					thumbnail: video.thumbnail || undefined,
 					scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
 					startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-					endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+					endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
 					channel: {
 						id: video.channel.id,
 						youtubeId: video.channel.ytChannelId,

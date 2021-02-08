@@ -116,11 +116,12 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.endedlivestream.html#bilibiliid" class="tsd-kind-icon">bilibili<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.endedlivestream.html#channel" class="tsd-kind-icon">channel</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="types.endedlivestream.html#endeddate" class="tsd-kind-icon">ended<wbr>Date</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="types.endedlivestream.html#enddate" class="tsd-kind-icon">end<wbr>Date</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.endedlivestream.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.endedlivestream.html#publishedat" class="tsd-kind-icon">published<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="types.endedlivestream.html#scheduleddate" class="tsd-kind-icon">scheduled<wbr>Date</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="types.endedlivestream.html#startdate" class="tsd-kind-icon">start<wbr>Date</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types.endedlivestream.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="types.endedlivestream.html#status" class="tsd-kind-icon">status</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.endedlivestream.html#thumbnail" class="tsd-kind-icon">thumbnail</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="types.endedlivestream.html#title" class="tsd-kind-icon">title</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="types.endedlivestream.html#viewers" class="tsd-kind-icon">viewers</a></li>
@@ -139,7 +140,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#bilibiliid">bilibiliId</a></p>
 						<ul>
-							<li>Defined in types.ts:18</li>
+							<li>Defined in types.ts:19</li>
 						</ul>
 					</aside>
 				</section>
@@ -150,18 +151,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#channel">channel</a></p>
 						<ul>
-							<li>Defined in types.ts:25</li>
+							<li>Defined in types.ts:27</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
-					<a name="endeddate" class="tsd-anchor"></a>
-					<h3>ended<wbr>Date</h3>
-					<div class="tsd-signature tsd-kind-icon">ended<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<a name="enddate" class="tsd-anchor"></a>
+					<h3>end<wbr>Date</h3>
+					<div class="tsd-signature tsd-kind-icon">end<wbr>Date<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
 					<aside class="tsd-sources">
-						<p>Overrides <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#endeddate">endedDate</a></p>
+						<p>Overrides <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#enddate">endDate</a></p>
 						<ul>
-							<li>Defined in types.ts:32</li>
+							<li>Defined in types.ts:34</li>
 						</ul>
 					</aside>
 				</section>
@@ -176,6 +177,17 @@
 						</ul>
 					</aside>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="publishedat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> published<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">published<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#publishedat">publishedAt</a></p>
+						<ul>
+							<li>Defined in types.ts:22</li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 					<a name="scheduleddate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> scheduled<wbr>Date</h3>
@@ -183,7 +195,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#scheduleddate">scheduledDate</a></p>
 						<ul>
-							<li>Defined in types.ts:30</li>
+							<li>Defined in types.ts:32</li>
 						</ul>
 					</aside>
 				</section>
@@ -194,17 +206,18 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#startdate">startDate</a></p>
 						<ul>
-							<li>Defined in types.ts:31</li>
+							<li>Defined in types.ts:33</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 					<a name="status" class="tsd-anchor"></a>
 					<h3>status</h3>
 					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"past"</span></div>
 					<aside class="tsd-sources">
+						<p>Overrides <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#status">status</a></p>
 						<ul>
-							<li>Defined in types.ts:29</li>
+							<li>Defined in types.ts:31</li>
 						</ul>
 					</aside>
 				</section>
@@ -215,7 +228,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#thumbnail">thumbnail</a></p>
 						<ul>
-							<li>Defined in types.ts:20</li>
+							<li>Defined in types.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -226,7 +239,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#title">title</a></p>
 						<ul>
-							<li>Defined in types.ts:19</li>
+							<li>Defined in types.ts:20</li>
 						</ul>
 					</aside>
 				</section>
@@ -237,7 +250,7 @@
 					<aside class="tsd-sources">
 						<p>Overrides <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#viewers">viewers</a></p>
 						<ul>
-							<li>Defined in types.ts:33</li>
+							<li>Defined in types.ts:35</li>
 						</ul>
 					</aside>
 				</section>
@@ -248,12 +261,12 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="types.videobase.html">VideoBase</a>.<a href="types.videobase.html#youtubeid">youtubeId</a></p>
 						<ul>
-							<li>Defined in types.ts:17</li>
+							<li>Defined in types.ts:18</li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<!--{&quot;options&quot;:&quot;C:\\Users\\Kevin\\Documents\\Workspace\\holotools-api&quot;,&quot;tsconfig&quot;:&quot;C:\\Users\\Kevin\\Documents\\Workspace\\holotools-api&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[&quot;typedoc-neo-theme&quot;],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
+			<!--{&quot;options&quot;:&quot;/home/kevin/Workspace/holotools-api&quot;,&quot;tsconfig&quot;:&quot;/home/kevin/Workspace/holotools-api&quot;,&quot;entryPoints&quot;:[&quot;src/&quot;],&quot;exclude&quot;:[],&quot;externalPattern&quot;:[&quot;**/node_modules/**&quot;],&quot;excludeExternals&quot;:false,&quot;excludeNotDocumented&quot;:false,&quot;excludeInternal&quot;:true,&quot;excludePrivate&quot;:false,&quot;excludeProtected&quot;:false,&quot;disableSources&quot;:false,&quot;includes&quot;:&quot;&quot;,&quot;media&quot;:&quot;&quot;,&quot;watch&quot;:false,&quot;preserveWatchOutput&quot;:false,&quot;emit&quot;:false,&quot;out&quot;:&quot;docs&quot;,&quot;json&quot;:&quot;&quot;,&quot;theme&quot;:&quot;./node_modules/typedoc-neo-theme/bin/default&quot;,&quot;highlightTheme&quot;:&quot;light-plus&quot;,&quot;name&quot;:&quot;&quot;,&quot;includeVersion&quot;:false,&quot;excludeTags&quot;:[],&quot;readme&quot;:&quot;&quot;,&quot;defaultCategory&quot;:&quot;Other&quot;,&quot;categoryOrder&quot;:[],&quot;categorizeByGroup&quot;:true,&quot;gitRevision&quot;:&quot;&quot;,&quot;gitRemote&quot;:&quot;origin&quot;,&quot;gaID&quot;:&quot;&quot;,&quot;gaSite&quot;:&quot;auto&quot;,&quot;hideGenerator&quot;:false,&quot;toc&quot;:[],&quot;disableOutputCheck&quot;:false,&quot;help&quot;:false,&quot;version&quot;:false,&quot;showConfig&quot;:false,&quot;plugin&quot;:[&quot;typedoc-neo-theme&quot;],&quot;logger&quot;:&quot;console&quot;,&quot;logLevel&quot;:1,&quot;listInvalidSymbolLinks&quot;:false}-->
 		</div>
 		<div class="col-2 col-menu secondary-menu">
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -285,10 +298,13 @@
 								<a href="types.endedlivestream.html#channel" class="tsd-kind-icon">channel</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
-								<a href="types.endedlivestream.html#endeddate" class="tsd-kind-icon">ended<wbr>Date</a>
+								<a href="types.endedlivestream.html#enddate" class="tsd-kind-icon">end<wbr>Date</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="types.endedlivestream.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="types.endedlivestream.html#publishedat" class="tsd-kind-icon">published<wbr>At</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 								<a href="types.endedlivestream.html#scheduleddate" class="tsd-kind-icon">scheduled<wbr>Date</a>
@@ -296,7 +312,7 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 								<a href="types.endedlivestream.html#startdate" class="tsd-kind-icon">start<wbr>Date</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 								<a href="types.endedlivestream.html#status" class="tsd-kind-icon">status</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">

@@ -32,8 +32,8 @@ class ChannelHandler {
 	get(
 		limit = 25,
 		offset = 0,
-		sort = '',
-		order: '' | 'asc' | 'desc' = '',
+		sort = 'id',
+		order: 'asc' | 'desc' = 'asc',
 		name = '',
 	): Promise<ChannelData> {
 		return new Promise((resolve, reject) => {

@@ -13,13 +13,15 @@ export interface Channel {
 }
 export interface VideoBase {
     id: number;
+    status: 'past' | 'live' | 'upcoming';
     youtubeId?: string;
     bilibiliId?: string;
     title: string;
     thumbnail?: string;
+    publishedAt?: Date;
     scheduledDate?: Date;
     startDate?: Date;
-    endedDate?: Date;
+    endDate?: Date;
     viewers?: number;
     channel: Channel;
 }
@@ -27,20 +29,20 @@ export interface EndedLivestream extends VideoBase {
     status: 'past';
     scheduledDate?: Date;
     startDate: Date;
-    endedDate: Date;
+    endDate: Date;
     viewers: undefined;
 }
 export interface LiveLivestream extends VideoBase {
     status: 'live';
     scheduledDate?: Date;
     startDate: Date;
-    endedDate: undefined;
+    endDate: undefined;
 }
 export interface UpcomingLivestream extends VideoBase {
     status: 'upcoming';
     scheduledDate: Date;
     startDate: undefined;
-    endedDate: undefined;
+    endDate: undefined;
     viewers: undefined;
 }
 export interface LivestreamData {
@@ -114,10 +116,12 @@ export interface ApiChannel {
  */
 export interface ApiVideoBase {
     id: number;
+    status: 'past' | 'live' | 'upcoming';
     ytVideoKey?: string;
     bbVideoId?: string;
     title: string;
     thumbnail?: string;
+    publishedAt?: string;
     liveSchedule?: string;
     liveStart?: string;
     liveEnd?: string;

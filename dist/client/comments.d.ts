@@ -16,7 +16,7 @@ declare class CommentHandler {
      * @param offset - Number of videos to skip
      * @param channelId - HoloAPI channel id
      */
-    search(query: string, limit: number | undefined, offset: number | undefined, channelId: number): Promise<CommentData>;
+    search(query: string, limit?: number, offset?: number, channelId?: number | ''): Promise<CommentData>;
 }
 export default CommentHandler;
 export = CommentHandler;

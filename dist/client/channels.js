@@ -20,7 +20,7 @@ class ChannelHandler {
      * @param order - Sort order.
      * @param name - Channel name search query.
      */
-    get(limit = 25, offset = 0, sort = '', order = '', name = '') {
+    get(limit = 25, offset = 0, sort = 'id', order = 'asc', name = '') {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/channels`, {
                 params: {

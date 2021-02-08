@@ -19,7 +19,7 @@ class CommentHandler {
      * @param offset - Number of videos to skip
      * @param channelId - HoloAPI channel id
      */
-    search(query, limit = 25, offset = 0, channelId) {
+    search(query, limit = 25, offset = 0, channelId = '') {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/comments/search`, {
                 params: {
@@ -31,7 +31,7 @@ class CommentHandler {
             })
                 .then((res) => {
                 const data = util_1.keysToCamel(res.data);
-                const videoData = data.data.map((video) => {
+                const videoData = data.comments.map((video) => {
                     const commentData = video.comments.map((comment) => ({
                         id: comment.commentKey,
                         message: comment.message,
@@ -48,6 +48,7 @@ class CommentHandler {
                     };
                     return {
                         id: video.id,
+                        status: video.status,
                         youtubeId: video.ytVideoKey || undefined,
                         bilibiliSpaceId: video.bbVideoId || undefined,
                         title: video.title,

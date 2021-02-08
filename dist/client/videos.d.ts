@@ -31,7 +31,7 @@ declare class VideoHandler {
      * @param isUploaded - Return only videos if true, otherwise will also return streams
      * @param isCaptioned - Set to true to only get videos with captions
      */
-    get(limit?: number, offset?: number, sort?: string, order?: '' | 'asc' | 'desc', title?: string, startDate?: Date | string, endDate?: Date | string, status?: '' | 'new' | 'live' | 'upcoming' | 'past' | 'missing', isUploaded?: boolean, isCaptioned?: boolean): Promise<VideoData>;
+    get(limit?: number, offset?: number, sort?: string, order?: 'asc' | 'desc', title?: string, startDate?: Date | string, endDate?: Date | string, status?: '' | 'new' | 'live' | 'upcoming' | 'past', isUploaded?: boolean, isCaptioned?: boolean): Promise<VideoData>;
     /**
      * Get a video by its HoloAPI id
      * @param id - HoloAPI record ID of the video.
