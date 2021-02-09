@@ -13,5 +13,5 @@ declare class Client {
     comments: CommentHandler;
     constructor(settings?: Settings);
 }
-export default Client;
+export { Client, VideoHandler, ChannelHandler, CommentHandler, };
 export = Client;
