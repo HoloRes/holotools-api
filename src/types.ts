@@ -14,7 +14,7 @@ export interface Channel {
 
 export interface VideoBase {
 	id: number,
-	status: 'past' | 'live' | 'upcoming',
+	status: 'past' | 'live' | 'upcoming' | 'missing' | 'new',
 	youtubeId?: string,
 	bilibiliId?: string,
 	title: string,
@@ -132,7 +132,7 @@ export interface ApiChannel {
  */
 export interface ApiVideoBase {
 	id: number,
-	status: 'past' | 'live' | 'upcoming';
+	status: 'past' | 'live' | 'upcoming' | 'missing' | 'new';
 	ytVideoKey?: string,
 	bbVideoId?: string,
 	title: string,
