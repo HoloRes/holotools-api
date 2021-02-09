@@ -24,8 +24,9 @@ class Client {
 	}
 }
 
-export { VideoHandler, ChannelHandler, CommentHandler };
+export {
+	Client, VideoHandler, ChannelHandler, CommentHandler,
+};
 
-export default Client;
 // @ts-expect-error Redefine error
 export = Client;
