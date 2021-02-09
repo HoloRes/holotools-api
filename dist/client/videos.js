@@ -44,7 +44,7 @@ class VideoHandler {
                     viewers: ls.liveViewers || undefined,
                     channel: {
                         id: ls.channel.id,
-                        youtubeId: ls.channel.id,
+                        youtubeId: ls.channel.ytChannelId,
                         bilibiliSpaceId: ls.channel.bbSpaceId || undefined,
                         name: ls.channel.name,
                         description: ls.channel.description || undefined,
@@ -64,7 +64,7 @@ class VideoHandler {
                     viewers: undefined,
                     channel: {
                         id: ls.channel.id,
-                        youtubeId: ls.channel.id,
+                        youtubeId: ls.channel.ytChannelId,
                         bilibiliSpaceId: ls.channel.bbSpaceId || undefined,
                         name: ls.channel.name,
                         description: ls.channel.description || undefined,
