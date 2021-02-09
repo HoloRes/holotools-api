@@ -72,7 +72,7 @@ class VideoHandler {
                         twitter: ls.channel.twitterLink || undefined,
                     },
                 }));
-                const upcomingVideoData = data.ended.map((ls) => ({
+                const upcomingVideoData = data.upcoming.map((ls) => ({
                     id: ls.id,
                     youtubeId: ls.ytVideoKey || undefined,
                     bilibiliId: ls.bbVideoId || undefined,

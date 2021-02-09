@@ -1,6 +1,6 @@
 {
   "name": "@holores/holoapi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Javascript library for the Holotools API.",
   "main": "dist/index.js",
   "scripts": {

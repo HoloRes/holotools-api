@@ -104,7 +104,7 @@ class VideoHandler {
 					},
 				}));
 
-				const upcomingVideoData: Array<UpcomingLivestream> = data.ended.map((ls: ApiUpcomingLivestream) => ({
+				const upcomingVideoData: Array<UpcomingLivestream> = data.upcoming.map((ls: ApiUpcomingLivestream) => ({
 					id: ls.id,
 					youtubeId: ls.ytVideoKey || undefined,
 					bilibiliId: ls.bbVideoId || undefined,
