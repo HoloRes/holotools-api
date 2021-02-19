@@ -10,7 +10,8 @@ class VideoHandler {
      * @internal
      */
     constructor(settings = {}) {
-        this.url = settings.url || 'https://api.holotools.app/v1';
+        var _a;
+        this.url = (_a = settings.url) !== null && _a !== void 0 ? _a : 'https://api.holotools.app/v1';
     }
     /**
      * Get currently live channels
@@ -32,66 +33,75 @@ class VideoHandler {
             }).then((res) => {
                 // Using this function so ESLint won't yell at me anymore.
                 const data = util_1.keysToCamel(res.data);
-                const liveVideoData = data.live.map((ls) => ({
-                    id: ls.id,
-                    youtubeId: ls.ytVideoKey || undefined,
-                    bilibiliId: ls.bbVideoId || undefined,
-                    title: ls.title,
-                    thumbnail: ls.thumbnail || undefined,
-                    scheduledDate: ls.liveSchedule ? new Date(ls.liveSchedule) : undefined,
-                    startDate: ls.liveStart ? new Date(ls.liveStart) : undefined,
-                    endDate: undefined,
-                    viewers: ls.liveViewers || undefined,
-                    channel: {
-                        id: ls.channel.id,
-                        youtubeId: ls.channel.ytChannelId,
-                        bilibiliSpaceId: ls.channel.bbSpaceId || undefined,
-                        name: ls.channel.name,
-                        description: ls.channel.description || undefined,
-                        publishedAt: ls.channel.publishedAt ? new Date(ls.channel.publishedAt) : undefined,
-                        twitter: ls.channel.twitterLink || undefined,
-                    },
-                }));
-                const endedVideoData = data.ended.map((ls) => ({
-                    id: ls.id,
-                    youtubeId: ls.ytVideoKey || undefined,
-                    bilibiliId: ls.bbVideoId || undefined,
-                    title: ls.title,
-                    thumbnail: ls.thumbnail || undefined,
-                    scheduledDate: ls.liveSchedule ? new Date(ls.liveSchedule) : undefined,
-                    startDate: new Date(ls.liveStart),
-                    endDate: new Date(ls.liveEnd),
-                    viewers: undefined,
-                    channel: {
-                        id: ls.channel.id,
-                        youtubeId: ls.channel.ytChannelId,
-                        bilibiliSpaceId: ls.channel.bbSpaceId || undefined,
-                        name: ls.channel.name,
-                        description: ls.channel.description || undefined,
-                        publishedAt: ls.channel.publishedAt ? new Date(ls.channel.publishedAt) : undefined,
-                        twitter: ls.channel.twitterLink || undefined,
-                    },
-                }));
-                const upcomingVideoData = data.upcoming.map((ls) => ({
-                    id: ls.id,
-                    youtubeId: ls.ytVideoKey || undefined,
-                    bilibiliId: ls.bbVideoId || undefined,
-                    title: ls.title,
-                    thumbnail: ls.thumbnail || undefined,
-                    scheduledDate: new Date(ls.liveSchedule),
-                    startDate: undefined,
-                    endDate: undefined,
-                    viewers: undefined,
-                    channel: {
-                        id: ls.channel.id,
-                        youtubeId: ls.channel.ytChannelId,
-                        bilibiliSpaceId: ls.channel.bbSpaceId || undefined,
-                        name: ls.channel.name,
-                        description: ls.channel.description || undefined,
-                        publishedAt: ls.channel.publishedAt ? new Date(ls.channel.publishedAt) : undefined,
-                        twitter: ls.channel.twitterLink || undefined,
-                    },
-                }));
+                const liveVideoData = data.live.map((ls) => {
+                    var _a, _b, _c, _d, _e, _f, _g;
+                    return ({
+                        id: ls.id,
+                        youtubeId: (_a = ls.ytVideoKey) !== null && _a !== void 0 ? _a : undefined,
+                        bilibiliId: (_b = ls.bbVideoId) !== null && _b !== void 0 ? _b : undefined,
+                        title: ls.title,
+                        thumbnail: (_c = ls.thumbnail) !== null && _c !== void 0 ? _c : undefined,
+                        scheduledDate: ls.liveSchedule ? new Date(ls.liveSchedule) : undefined,
+                        startDate: ls.liveStart ? new Date(ls.liveStart) : undefined,
+                        endDate: undefined,
+                        viewers: (_d = ls.liveViewers) !== null && _d !== void 0 ? _d : undefined,
+                        channel: {
+                            id: ls.channel.id,
+                            youtubeId: ls.channel.ytChannelId,
+                            bilibiliSpaceId: (_e = ls.channel.bbSpaceId) !== null && _e !== void 0 ? _e : undefined,
+                            name: ls.channel.name,
+                            description: (_f = ls.channel.description) !== null && _f !== void 0 ? _f : undefined,
+                            publishedAt: ls.channel.publishedAt ? new Date(ls.channel.publishedAt) : undefined,
+                            twitter: (_g = ls.channel.twitterLink) !== null && _g !== void 0 ? _g : undefined,
+                        },
+                    });
+                });
+                const endedVideoData = data.ended.map((ls) => {
+                    var _a, _b, _c, _d, _e, _f;
+                    return ({
+                        id: ls.id,
+                        youtubeId: (_a = ls.ytVideoKey) !== null && _a !== void 0 ? _a : undefined,
+                        bilibiliId: (_b = ls.bbVideoId) !== null && _b !== void 0 ? _b : undefined,
+                        title: ls.title,
+                        thumbnail: (_c = ls.thumbnail) !== null && _c !== void 0 ? _c : undefined,
+                        scheduledDate: ls.liveSchedule ? new Date(ls.liveSchedule) : undefined,
+                        startDate: new Date(ls.liveStart),
+                        endDate: new Date(ls.liveEnd),
+                        viewers: undefined,
+                        channel: {
+                            id: ls.channel.id,
+                            youtubeId: ls.channel.ytChannelId,
+                            bilibiliSpaceId: (_d = ls.channel.bbSpaceId) !== null && _d !== void 0 ? _d : undefined,
+                            name: ls.channel.name,
+                            description: (_e = ls.channel.description) !== null && _e !== void 0 ? _e : undefined,
+                            publishedAt: ls.channel.publishedAt ? new Date(ls.channel.publishedAt) : undefined,
+                            twitter: (_f = ls.channel.twitterLink) !== null && _f !== void 0 ? _f : undefined,
+                        },
+                    });
+                });
+                const upcomingVideoData = data.upcoming.map((ls) => {
+                    var _a, _b, _c, _d, _e, _f;
+                    return ({
+                        id: ls.id,
+                        youtubeId: (_a = ls.ytVideoKey) !== null && _a !== void 0 ? _a : undefined,
+                        bilibiliId: (_b = ls.bbVideoId) !== null && _b !== void 0 ? _b : undefined,
+                        title: ls.title,
+                        thumbnail: (_c = ls.thumbnail) !== null && _c !== void 0 ? _c : undefined,
+                        scheduledDate: new Date(ls.liveSchedule),
+                        startDate: undefined,
+                        endDate: undefined,
+                        viewers: undefined,
+                        channel: {
+                            id: ls.channel.id,
+                            youtubeId: ls.channel.ytChannelId,
+                            bilibiliSpaceId: (_d = ls.channel.bbSpaceId) !== null && _d !== void 0 ? _d : undefined,
+                            name: ls.channel.name,
+                            description: (_e = ls.channel.description) !== null && _e !== void 0 ? _e : undefined,
+                            publishedAt: ls.channel.publishedAt ? new Date(ls.channel.publishedAt) : undefined,
+                            twitter: (_f = ls.channel.twitterLink) !== null && _f !== void 0 ? _f : undefined,
+                        },
+                    });
+                });
                 resolve({
                     live: liveVideoData,
                     upcoming: upcomingVideoData,
@@ -137,30 +147,33 @@ class VideoHandler {
                 },
             }).then((res) => {
                 const data = util_1.keysToCamel(res.data);
-                const videoData = data.videos.map((video) => ({
-                    id: video.id,
-                    youtubeId: video.ytVideoKey,
-                    bilibiliId: video.bbVideoId,
-                    title: video.title,
-                    thumbnail: video.thumbnail || undefined,
-                    publishedAt: video.publishedAt ? new Date(video.publishedAt) : undefined,
-                    scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
-                    startDate: video.liveStart ? new Date(video.liveStart) : undefined,
-                    endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
-                    channel: {
-                        id: video.channel.id,
-                        youtubeId: video.channel.ytChannelId,
-                        bilibiliSpaceId: video.channel.bbSpaceId || undefined,
-                        name: video.channel.name,
-                        description: video.channel.description || undefined,
-                        photo: video.channel.photo || undefined,
-                        publishedAt: new Date(video.channel.publishedAt),
-                        twitter: video.channel.twitterLink || undefined,
-                    },
-                    isUploaded: video.isUploaded === 1,
-                    isCaptioned: video.isCaptioned === 1,
-                    durationSecs: video.durationSecs,
-                }));
+                const videoData = data.videos.map((video) => {
+                    var _a, _b, _c, _d, _e;
+                    return ({
+                        id: video.id,
+                        youtubeId: video.ytVideoKey,
+                        bilibiliId: video.bbVideoId,
+                        title: video.title,
+                        thumbnail: (_a = video.thumbnail) !== null && _a !== void 0 ? _a : undefined,
+                        publishedAt: video.publishedAt ? new Date(video.publishedAt) : undefined,
+                        scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
+                        startDate: video.liveStart ? new Date(video.liveStart) : undefined,
+                        endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
+                        channel: {
+                            id: video.channel.id,
+                            youtubeId: video.channel.ytChannelId,
+                            bilibiliSpaceId: (_b = video.channel.bbSpaceId) !== null && _b !== void 0 ? _b : undefined,
+                            name: video.channel.name,
+                            description: (_c = video.channel.description) !== null && _c !== void 0 ? _c : undefined,
+                            photo: (_d = video.channel.photo) !== null && _d !== void 0 ? _d : undefined,
+                            publishedAt: new Date(video.channel.publishedAt),
+                            twitter: (_e = video.channel.twitterLink) !== null && _e !== void 0 ? _e : undefined,
+                        },
+                        isUploaded: video.isUploaded === 1,
+                        isCaptioned: video.isCaptioned === 1,
+                        durationSecs: video.durationSecs,
+                    });
+                });
                 resolve({
                     videos: videoData,
                     total: data.total,
@@ -187,6 +200,7 @@ class VideoHandler {
                     with_comments: withComments ? 1 : 0,
                 },
             }).then((res) => {
+                var _a, _b, _c, _d, _e, _f, _g;
                 const video = util_1.keysToCamel(res.data);
                 const comments = withComments ? video.comments.map((comment) => ({
                     id: comment.commentKey,
@@ -194,23 +208,23 @@ class VideoHandler {
                 })) : undefined;
                 resolve({
                     id: video.id,
-                    youtubeId: video.ytVideoKey || undefined,
-                    bilibiliId: video.bbVideoId || undefined,
+                    youtubeId: (_a = video.ytVideoKey) !== null && _a !== void 0 ? _a : undefined,
+                    bilibiliId: (_b = video.bbVideoId) !== null && _b !== void 0 ? _b : undefined,
                     status: video.status,
                     title: video.title,
-                    thumbnail: video.thumbnail || undefined,
+                    thumbnail: (_c = video.thumbnail) !== null && _c !== void 0 ? _c : undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
                     endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
-                        bilibiliSpaceId: video.channel.bbSpaceId || undefined,
+                        bilibiliSpaceId: (_d = video.channel.bbSpaceId) !== null && _d !== void 0 ? _d : undefined,
                         name: video.channel.name,
-                        description: video.channel.description || undefined,
-                        photo: video.channel.photo || undefined,
+                        description: (_e = video.channel.description) !== null && _e !== void 0 ? _e : undefined,
+                        photo: (_f = video.channel.photo) !== null && _f !== void 0 ? _f : undefined,
                         publishedAt: new Date(video.channel.publishedAt),
-                        twitter: video.channel.twitterLink || undefined,
+                        twitter: (_g = video.channel.twitterLink) !== null && _g !== void 0 ? _g : undefined,
                     },
                     isUploaded: video.isUploaded === 1,
                     isCaptioned: video.isCaptioned === 1,
@@ -238,6 +252,7 @@ class VideoHandler {
                     with_comments: withComments ? 1 : 0,
                 },
             }).then((res) => {
+                var _a, _b, _c, _d, _e;
                 const video = util_1.keysToCamel(res.data);
                 const comments = withComments ? video.comments.map((comment) => ({
                     id: comment.commentKey,
@@ -249,19 +264,19 @@ class VideoHandler {
                     youtubeId: video.ytVideoKey,
                     bilibiliId: undefined,
                     title: video.title,
-                    thumbnail: video.thumbnail || undefined,
+                    thumbnail: (_a = video.thumbnail) !== null && _a !== void 0 ? _a : undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
                     endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
-                        bilibiliSpaceId: video.channel.bbSpaceId || undefined,
+                        bilibiliSpaceId: (_b = video.channel.bbSpaceId) !== null && _b !== void 0 ? _b : undefined,
                         name: video.channel.name,
-                        description: video.channel.description || undefined,
-                        photo: video.channel.photo || undefined,
+                        description: (_c = video.channel.description) !== null && _c !== void 0 ? _c : undefined,
+                        photo: (_d = video.channel.photo) !== null && _d !== void 0 ? _d : undefined,
                         publishedAt: new Date(video.channel.publishedAt),
-                        twitter: video.channel.twitterLink || undefined,
+                        twitter: (_e = video.channel.twitterLink) !== null && _e !== void 0 ? _e : undefined,
                     },
                     isUploaded: video.isUploaded === 1,
                     isCaptioned: video.isCaptioned === 1,
@@ -284,6 +299,7 @@ class VideoHandler {
     getByBilibiliId(id) {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/videos/bilibili/${id}`).then((res) => {
+                var _a, _b, _c, _d, _e;
                 const video = util_1.keysToCamel(res.data);
                 resolve({
                     id: video.id,
@@ -291,19 +307,19 @@ class VideoHandler {
                     youtubeId: undefined,
                     bilibiliId: video.bbVideoId,
                     title: video.title,
-                    thumbnail: video.thumbnail || undefined,
+                    thumbnail: (_a = video.thumbnail) !== null && _a !== void 0 ? _a : undefined,
                     scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                     startDate: video.liveStart ? new Date(video.liveStart) : undefined,
                     endDate: video.liveEnd ? new Date(video.liveEnd) : undefined,
                     channel: {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
-                        bilibiliSpaceId: video.channel.bbSpaceId || undefined,
+                        bilibiliSpaceId: (_b = video.channel.bbSpaceId) !== null && _b !== void 0 ? _b : undefined,
                         name: video.channel.name,
-                        description: video.channel.description || undefined,
-                        photo: video.channel.photo || undefined,
+                        description: (_c = video.channel.description) !== null && _c !== void 0 ? _c : undefined,
+                        photo: (_d = video.channel.photo) !== null && _d !== void 0 ? _d : undefined,
                         publishedAt: new Date(video.channel.publishedAt),
-                        twitter: video.channel.twitterLink || undefined,
+                        twitter: (_e = video.channel.twitterLink) !== null && _e !== void 0 ? _e : undefined,
                     },
                     isUploaded: video.isUploaded === 1,
                     isCaptioned: video.isCaptioned === 1,

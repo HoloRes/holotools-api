@@ -10,7 +10,8 @@ class CommentHandler {
      * @internal
      */
     constructor(settings = {}) {
-        this.url = settings.url || 'https://api.holotools.app/v1';
+        var _a;
+        this.url = (_a = settings.url) !== null && _a !== void 0 ? _a : 'https://api.holotools.app/v1';
     }
     /**
      * Search comments by a query
@@ -32,6 +33,7 @@ class CommentHandler {
                 .then((res) => {
                 const data = util_1.keysToCamel(res.data);
                 const videoData = data.comments.map((video) => {
+                    var _a, _b, _c, _d, _e, _f, _g;
                     const commentData = video.comments.map((comment) => ({
                         id: comment.commentKey,
                         message: comment.message,
@@ -39,20 +41,20 @@ class CommentHandler {
                     const channel = {
                         id: video.channel.id,
                         youtubeId: video.channel.ytChannelId,
-                        bilibiliSpaceId: video.channel.bbSpaceId || undefined,
+                        bilibiliSpaceId: (_a = video.channel.bbSpaceId) !== null && _a !== void 0 ? _a : undefined,
                         name: video.channel.name,
-                        description: video.channel.description || undefined,
-                        photo: video.channel.photo || undefined,
+                        description: (_b = video.channel.description) !== null && _b !== void 0 ? _b : undefined,
+                        photo: (_c = video.channel.photo) !== null && _c !== void 0 ? _c : undefined,
                         publishedAt: new Date(video.channel.publishedAt),
-                        twitter: video.channel.twitterLink || undefined,
+                        twitter: (_d = video.channel.twitterLink) !== null && _d !== void 0 ? _d : undefined,
                     };
                     return {
                         id: video.id,
                         status: video.status,
-                        youtubeId: video.ytVideoKey || undefined,
-                        bilibiliSpaceId: video.bbVideoId || undefined,
+                        youtubeId: (_e = video.ytVideoKey) !== null && _e !== void 0 ? _e : undefined,
+                        bilibiliSpaceId: (_f = video.bbVideoId) !== null && _f !== void 0 ? _f : undefined,
                         title: video.title,
-                        thumbnail: video.thumbnail || undefined,
+                        thumbnail: (_g = video.thumbnail) !== null && _g !== void 0 ? _g : undefined,
                         scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
                         startDate: video.liveStart ? new Date(video.liveStart) : undefined,
                         endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,

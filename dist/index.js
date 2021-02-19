@@ -8,7 +8,8 @@ const channels_1 = __importDefault(require("./client/channels"));
 const comments_1 = __importDefault(require("./client/comments"));
 class Client {
     constructor(settings = {}) {
-        this.url = settings.url || 'https://api.holotools.app/v1';
+        var _a;
+        this.url = (_a = settings.url) !== null && _a !== void 0 ? _a : 'https://api.holotools.app/v1';
         this.videos = new videos_1.default(settings);
         this.channels = new channels_1.default(settings);
         this.comments = new comments_1.default(settings);

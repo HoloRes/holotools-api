@@ -10,7 +10,8 @@ class ChannelHandler {
      * @internal
      */
     constructor(settings = {}) {
-        this.url = settings.url || 'https://api.holotools.app/v1';
+        var _a;
+        this.url = (_a = settings.url) !== null && _a !== void 0 ? _a : 'https://api.holotools.app/v1';
     }
     /**
      * Returns a list of channels
@@ -33,16 +34,19 @@ class ChannelHandler {
             })
                 .then((res) => {
                 const data = util_1.keysToCamel(res.data);
-                const channelData = data.channels.map((ch) => ({
-                    id: ch.id,
-                    youtubeId: ch.ytChannelId,
-                    bilibiliSpaceId: ch.bbSpaceId || undefined,
-                    name: ch.name,
-                    description: ch.description || undefined,
-                    photo: ch.photo || undefined,
-                    publishedAt: new Date(ch.publishedAt),
-                    twitter: ch.twitterLink || undefined,
-                }));
+                const channelData = data.channels.map((ch) => {
+                    var _a, _b, _c, _d;
+                    return ({
+                        id: ch.id,
+                        youtubeId: ch.ytChannelId,
+                        bilibiliSpaceId: (_a = ch.bbSpaceId) !== null && _a !== void 0 ? _a : undefined,
+                        name: ch.name,
+                        description: (_b = ch.description) !== null && _b !== void 0 ? _b : undefined,
+                        photo: (_c = ch.photo) !== null && _c !== void 0 ? _c : undefined,
+                        publishedAt: new Date(ch.publishedAt),
+                        twitter: (_d = ch.twitterLink) !== null && _d !== void 0 ? _d : undefined,
+                    });
+                });
                 resolve({
                     channels: channelData,
                     total: data.total,
@@ -65,16 +69,17 @@ class ChannelHandler {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/channels/${id}`)
                 .then((res) => {
+                var _a, _b, _c, _d;
                 const data = util_1.keysToCamel(res.data);
                 const channelData = {
                     id: data.id,
                     youtubeId: data.ytChannelId,
-                    bilibiliSpaceId: data.bbSpaceId || undefined,
+                    bilibiliSpaceId: (_a = data.bbSpaceId) !== null && _a !== void 0 ? _a : undefined,
                     name: data.name,
-                    description: data.description || undefined,
-                    photo: data.photo || undefined,
+                    description: (_b = data.description) !== null && _b !== void 0 ? _b : undefined,
+                    photo: (_c = data.photo) !== null && _c !== void 0 ? _c : undefined,
                     publishedAt: new Date(data.publishedAt),
-                    twitter: data.twitterLink || undefined,
+                    twitter: (_d = data.twitterLink) !== null && _d !== void 0 ? _d : undefined,
                 };
                 resolve(channelData);
             }).catch((error) => {
@@ -94,16 +99,17 @@ class ChannelHandler {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/channels/youtube/${id}`)
                 .then((res) => {
+                var _a, _b, _c, _d;
                 const data = util_1.keysToCamel(res.data);
                 const channelData = {
                     id: data.id,
                     youtubeId: data.ytChannelId,
-                    bilibiliSpaceId: data.bbSpaceId || undefined,
+                    bilibiliSpaceId: (_a = data.bbSpaceId) !== null && _a !== void 0 ? _a : undefined,
                     name: data.name,
-                    description: data.description || undefined,
-                    photo: data.photo || undefined,
+                    description: (_b = data.description) !== null && _b !== void 0 ? _b : undefined,
+                    photo: (_c = data.photo) !== null && _c !== void 0 ? _c : undefined,
                     publishedAt: new Date(data.publishedAt),
-                    twitter: data.twitterLink || undefined,
+                    twitter: (_d = data.twitterLink) !== null && _d !== void 0 ? _d : undefined,
                 };
                 resolve(channelData);
             }).catch((error) => {
@@ -123,16 +129,17 @@ class ChannelHandler {
         return new Promise((resolve, reject) => {
             axios_1.default.get(`${this.url}/channels/bilibili/${id}`)
                 .then((res) => {
+                var _a, _b, _c, _d;
                 const data = util_1.keysToCamel(res.data);
                 const channelData = {
                     id: data.id,
                     youtubeId: data.ytChannelId,
-                    bilibiliSpaceId: data.bbSpaceId || undefined,
+                    bilibiliSpaceId: (_a = data.bbSpaceId) !== null && _a !== void 0 ? _a : undefined,
                     name: data.name,
-                    description: data.description || undefined,
-                    photo: data.photo || undefined,
+                    description: (_b = data.description) !== null && _b !== void 0 ? _b : undefined,
+                    photo: (_c = data.photo) !== null && _c !== void 0 ? _c : undefined,
                     publishedAt: new Date(data.publishedAt),
-                    twitter: data.twitterLink || undefined,
+                    twitter: (_d = data.twitterLink) !== null && _d !== void 0 ? _d : undefined,
                 };
                 resolve(channelData);
             }).catch((error) => {
