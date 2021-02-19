@@ -18,7 +18,7 @@ class CommentHandler {
 	 * @internal
 	 */
 	constructor(settings: Settings = {}) {
-		this.url = settings.url || 'https://api.holotools.app/v1';
+		this.url = settings.url ?? 'https://api.holotools.app/v1';
 	}
 
 	/**
@@ -50,21 +50,21 @@ class CommentHandler {
 						const channel: Channel = {
 							id: video.channel.id,
 							youtubeId: video.channel.ytChannelId,
-							bilibiliSpaceId: video.channel.bbSpaceId || undefined,
+							bilibiliSpaceId: video.channel.bbSpaceId ?? undefined,
 							name: video.channel.name,
-							description: video.channel.description || undefined,
-							photo: video.channel.photo || undefined,
+							description: video.channel.description ?? undefined,
+							photo: video.channel.photo ?? undefined,
 							publishedAt: new Date(video.channel.publishedAt),
-							twitter: video.channel.twitterLink || undefined,
+							twitter: video.channel.twitterLink ?? undefined,
 						};
 
 						return {
 							id: video.id,
 							status: video.status,
-							youtubeId: video.ytVideoKey || undefined,
-							bilibiliSpaceId: video.bbVideoId || undefined,
+							youtubeId: video.ytVideoKey ?? undefined,
+							bilibiliSpaceId: video.bbVideoId ?? undefined,
 							title: video.title,
-							thumbnail: video.thumbnail || undefined,
+							thumbnail: video.thumbnail ?? undefined,
 							scheduledDate: video.liveSchedule ? new Date(video.liveSchedule) : undefined,
 							startDate: video.liveStart ? new Date(video.liveStart) : undefined,
 							endedDate: video.liveEnd ? new Date(video.liveEnd) : undefined,

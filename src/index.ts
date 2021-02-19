@@ -17,7 +17,7 @@ class Client {
 	public comments: CommentHandler;
 
 	constructor(settings: Settings = {}) {
-		this.url = settings.url || 'https://api.holotools.app/v1';
+		this.url = settings.url ?? 'https://api.holotools.app/v1';
 		this.videos = new VideoHandler(settings);
 		this.channels = new ChannelHandler(settings);
 		this.comments = new CommentHandler(settings);

@@ -18,7 +18,7 @@ class ChannelHandler {
 	 * @internal
 	 */
 	constructor(settings: Settings = {}) {
-		this.url = settings.url || 'https://api.holotools.app/v1';
+		this.url = settings.url ?? 'https://api.holotools.app/v1';
 	}
 
 	/**
@@ -52,12 +52,12 @@ class ChannelHandler {
 					const channelData: Array<Channel> = data.channels.map((ch: ApiChannel) => ({
 						id: ch.id,
 						youtubeId: ch.ytChannelId,
-						bilibiliSpaceId: ch.bbSpaceId || undefined,
+						bilibiliSpaceId: ch.bbSpaceId ?? undefined,
 						name: ch.name,
-						description: ch.description || undefined,
-						photo: ch.photo || undefined,
+						description: ch.description ?? undefined,
+						photo: ch.photo ?? undefined,
 						publishedAt: new Date(ch.publishedAt),
-						twitter: ch.twitterLink || undefined,
+						twitter: ch.twitterLink ?? undefined,
 					}));
 
 					resolve({
@@ -85,12 +85,12 @@ class ChannelHandler {
 					const channelData: Channel = {
 						id: data.id,
 						youtubeId: data.ytChannelId,
-						bilibiliSpaceId: data.bbSpaceId || undefined,
+						bilibiliSpaceId: data.bbSpaceId ?? undefined,
 						name: data.name,
-						description: data.description || undefined,
-						photo: data.photo || undefined,
+						description: data.description ?? undefined,
+						photo: data.photo ?? undefined,
 						publishedAt: new Date(data.publishedAt),
-						twitter: data.twitterLink || undefined,
+						twitter: data.twitterLink ?? undefined,
 					};
 
 					resolve(channelData);
@@ -114,12 +114,12 @@ class ChannelHandler {
 					const channelData: Channel = {
 						id: data.id,
 						youtubeId: data.ytChannelId,
-						bilibiliSpaceId: data.bbSpaceId || undefined,
+						bilibiliSpaceId: data.bbSpaceId ?? undefined,
 						name: data.name,
-						description: data.description || undefined,
-						photo: data.photo || undefined,
+						description: data.description ?? undefined,
+						photo: data.photo ?? undefined,
 						publishedAt: new Date(data.publishedAt),
-						twitter: data.twitterLink || undefined,
+						twitter: data.twitterLink ?? undefined,
 					};
 
 					resolve(channelData);
@@ -143,12 +143,12 @@ class ChannelHandler {
 					const channelData: Channel = {
 						id: data.id,
 						youtubeId: data.ytChannelId,
-						bilibiliSpaceId: data.bbSpaceId || undefined,
+						bilibiliSpaceId: data.bbSpaceId ?? undefined,
 						name: data.name,
-						description: data.description || undefined,
-						photo: data.photo || undefined,
+						description: data.description ?? undefined,
+						photo: data.photo ?? undefined,
 						publishedAt: new Date(data.publishedAt),
-						twitter: data.twitterLink || undefined,
+						twitter: data.twitterLink ?? undefined,
 					};
 
 					resolve(channelData);
