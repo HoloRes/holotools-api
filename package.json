@@ -32,7 +32,7 @@
   },
   "homepage": "https://holores.github.io/holotools-api/modules/index.html",
   "devDependencies": {
-    "@tsconfig/node14": "1.0.0",
+    "@tsconfig/node14": "1.0.1",
     "@types/chai": "4.2.15",
     "@types/mocha": "8.2.1",
     "@types/node": "14.14.31",
