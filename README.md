@@ -1,3 +1,5 @@
+# ARCHIVED IN FAVOR OF HOLODEX. Client will be available in this org sometime.
+
 # Holotools API client
 [![NPM](https://nodeico.herokuapp.com/@holores/holoapi.svg)](https://npmjs.com/package/@holores/holoapi)
 
